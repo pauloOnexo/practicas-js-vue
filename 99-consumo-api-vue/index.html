@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Práctica conexión a API</title>
+</head>
+<body>
+    
+    <!-- This is an example component -->
+<div id="myApp" class="max-w-2xl mx-auto bg-white p-16">
+
+    <div class="grid gap-6 mb-1 lg:grid-cols-2">
+        <div>
+            <label for="first_name" class="block mb-2 text-xl font-bold text-gray-900 dark:text-gray-900">Tu CP</label>
+            <input type="text" v-model="cp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="94940" v-on:keypress.enter="getLocation" required>
+        </div>
+    </div>
+    <div class="flex items-start mb-2">
+    </div>
+
+	<!-- This is an example component -->
+<div class="max-w-2xl mt-5 mx-auto">
+
+	<div class="p-4 max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex justify-center items-center mb-4">
+        <h3 class="text-xl font-bold leading-none text-gray-900 dark:text-white">{{estado}}</h3>
+   </div>
+   <div class="flex justify-center items-center mb-4">
+    <h6 class="text-md font-thin leading-none text-gray-800 dark:text-white">{{municipio}}</h3>
+</div>
+   <div class="flow-root">
+        <ul id="ulList" role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+            <li v-for="assent in assents" class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                                            
+                    <div class="flex-1 min-w-0">
+                        <p id="ciudad" class="text-sm font-thin text-gray-900 truncate dark:text-white">
+                            {{assent.d_asenta}}
+                        </p>
+                                                
+                    </div>
+                    <div id="asentamiento" class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                       {{assent.d_tipo_asenta}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+   </div>
+</div>
+	<p class="mt-5">Práctica Trainne Web <a class="text-blue-600 hover:underline"
+			href="#" target="_blank">Onexo.mx</a>.
+	</p>
+</div>
+</div>
+
+<!-- Scripts vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
